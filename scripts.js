@@ -21,6 +21,9 @@ function handleSubmit(e) {
 
   emailElement.innerText = email;
 
+  emailInput.classList.remove("error");
+  errorMsg.classList.remove("error");
+
   signupSection.classList.add("hide");
   thanksSection.classList.remove("hide");
   form.reset();
