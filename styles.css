@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --pink: hsl(346, 100%, 66%);
+  --red: hsl(4, 100%, 67%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", san-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--blue-700);
+  color: var(--white);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  background-color: var(--white);
+  color: var(--blue-800);
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  background: no-repeat center / contain url("./assets/images/icon-list.svg");
+}
+
+form {
+  margin: 3rem 0 0 0;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--blue-800);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+button {
+  display: block;
+  margin: 1.5rem 0 0 0;
+  width: 100%;
+  border: unset;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    var(--blue-800),
+    var(--blue-800),
+    var(--red),
+    var(--red),
+    var(--pink)
+  );
+  background-size: 400% 100%; /* Make the gradient wider than the element */
+  background-position: 0% 0%;
+  transition: background-position 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+button:hover,
+button:active,
+button:focus {
+  background-position: 100% 0%; /* Slide the gradient to the right */
+  box-shadow: 0 6px 20px 10px hsla(4, 100%, 67%, 0.3);
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.mobile-img {
+  width: 100%;
+}
+
+.tablet-img,
+.desktop-img {
+  display: none;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.label-error {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.error-msg {
+  display: none;
+  color: var(--red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.error-msg.error {
+  display: block;
+}
+
+input.error {
+  border: 1px solid var(--red);
+  background-color: hsla(4, 100%, 67%, 0.2);
+  color: var(--red);
+}
+
+section.signup.hide,
+section.thanks.hide {
+  display: none;
+}
+
+.thanks {
+  padding: 2rem;
+}
+
+.check-mark {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 43rem) {
+  section {
+    margin-top: 2rem;
+    max-width: 30rem;
+    min-height: unset;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px 4px rgba(0, 0, 0, 0.3);
+  }
+  .mobile-img {
+    display: none;
+  }
+  .tablet-img {
+    display: block;
+    width: 100%;
+  }
+  .container {
+    padding: 2rem 0 0 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  section.signup {
+    max-width: 58rem;
+    display: flex;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0 4rem 0 0;
+  }
+  .tablet-img {
+    display: none;
+  }
+  .desktop-img {
+    display: block;
+  }
+}
