@@ -13,7 +13,9 @@ function handleSubmit(e) {
 
   if (email === "" || !emailRegex.test(email)) {
     emailInput.classList.add("error");
-    errorMsg.classList.add("error");
+    errorMsg.textContent = "Valid email required";
+    emailInput.setAttribute("aria-invalid", "true");
+    emailInput.focus();
     return;
   }
 
@@ -22,10 +24,13 @@ function handleSubmit(e) {
   emailElement.innerText = email;
 
   emailInput.classList.remove("error");
-  errorMsg.classList.remove("error");
+  emailInput.setAttribute("aria-invalid", "false");
+  errorMsg.textContent = "";
 
   signupSection.classList.add("hide");
   thanksSection.classList.remove("hide");
+  thanksSection.setAttribute("tabindex", "-1");
+  thanksSection.focus();
   form.reset();
 }
 

@@ -161,15 +161,10 @@ footer {
 }
 
 .error-msg {
-  display: none;
   color: var(--red);
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0.5rem 0;
-}
-
-.error-msg.error {
-  display: block;
 }
 
 input.error {
